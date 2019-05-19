@@ -444,6 +444,14 @@ ahoy.trackAll = function() {
   ahoy.trackChanges();
 };
 
+ahoy.setHeader = function (key, value) {
+  config.headers[key] = value
+};
+
+ahoy.deleteHeader = function (key) {
+  delete config.headers[key]
+};
+
 // push events from queue
 try {
   eventQueue = JSON.parse(getCookie("ahoy_events") || "[]");
